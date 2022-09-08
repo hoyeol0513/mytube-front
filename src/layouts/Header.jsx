@@ -20,12 +20,18 @@ const Header = () => {
 
                 {/* 가운데 부분 : input bar */}
                 <div className="flex-1 justify-end gap-2 ml-auto">
-                    <div className="form-control mx-auto w-1/3">
+                    <div className="form-control mx-auto w-1/2 ">
+                        <form onSubmit={(e)=>{e.preventDefault()}}>
+
                         <input 
                             type="text" 
                             placeholder="Search"
-                            className="input input-borderred border-gray-400"
+                            className="input input-borderred input-md w-full max-w-xs  border-gray-400"
                         />
+                        <button className="btn btn-ghost btn-active w-12 text-base"><i class="fi fi-br-search"></i></button>
+                        </form>
+                        
+                        
                     </div>
 
                 </div>
