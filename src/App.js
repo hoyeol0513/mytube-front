@@ -4,7 +4,7 @@ import Layout from "./layouts/Layout";
 function App() {
   return (
     <Layout>
-      <div>App</div>s
+      <div>App</div>
     </Layout>
     
   );

@@ -22,8 +22,8 @@ root.render(
         </span> */}
       </div>
       <Routes>
-        <Route path="/" element={<App />}></Route>
-        <Route path="/home" element={<Home />}></Route>
+        <Route path="/home" element={<App />}></Route>
+        <Route path="/" element={<Home />}></Route>
         <Route path="/about/:id" element={<About />}></Route>
       </Routes>
     </Router>

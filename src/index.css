@@ -1,3 +1,5 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css')
