@@ -1,12 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import About from './routes/About';
-import Home from './routes/Home';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import About from "./routes/About";
+import Home from "./routes/Home";
+import Join from "./routes/Join";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
@@ -22,9 +23,9 @@ root.render(
         </span> */}
       </div>
       <Routes>
-        <Route path="/home" element={<App />}></Route>
         <Route path="/" element={<Home />}></Route>
         <Route path="/about/:id" element={<About />}></Route>
+        <Route path="/join" element={<Join />}></Route>
       </Routes>
     </Router>
   </React.StrictMode>
