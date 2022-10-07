@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { BACKEND_URL } from "../utils";
 
 const Join = () => {
-  const [userName, setUserName] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   return (
@@ -12,15 +12,25 @@ const Join = () => {
         className="flex flex-col w-60 p-4 "
         onSubmit={async (e) => {
           e.preventDefault();
-          const data = await axios({
-            url: `${BACKEND_URL}/user/join`,
-            method: "POST",
-            data: {
-              userName,
-              email,
-              password,
-            },
-          });
+          try {
+            const data = await axios({
+              url: `${BACKEND_URL}/user/join`,
+              method: "POST",
+              data: {
+                username, //backend의 entity와 이름을 맞춰야함!!!
+                email,
+                password,
+              },
+            });
+            setUsername("");
+            setEmail("");
+            setPassword("");
+            alert("회원가입 성공");
+            console.log(data);
+          } catch (err) {
+            console.log(err);
+            alert("회원가입 실패");
+          }
         }}
       >
         <div>회원가입</div>
@@ -39,7 +49,7 @@ const Join = () => {
           className="w-full border-2 border-black"
           placeholder="UserName 입력"
           onChange={(e) => {
-            setUserName(e.target.value);
+            setUsername(e.target.value);
           }}
         />
         <div className="mt-4">비밀번호를 입력해주세요.</div>
