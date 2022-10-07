@@ -1,12 +1,18 @@
 import React from "react";
-import Layout from "./layouts/Layout";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./routes/Home";
+import About from "./routes/About";
+import Join from "./routes/Join";
 
 function App() {
   return (
-    <Layout>
-      <div>App</div>  
-    </Layout>
-    
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/about/:id" element={<About />}></Route>
+        <Route path="/join" element={<Join />}></Route>
+      </Routes>
+    </Router>
   );
 }
 
