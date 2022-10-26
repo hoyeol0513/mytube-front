@@ -59,7 +59,7 @@ const Header = () => {
                 className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
               >
                 <li>
-                  <Link to={"/about/1"}>Profile</Link>
+                  <Link to={`/users/${user.id}`}>Profile</Link>
                 </li>
                 <li>
                   <div>Settings</div>
