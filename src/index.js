@@ -8,6 +8,7 @@ import Join from "./routes/Join";
 import Login from "./routes/Login";
 import UserDetail from "./routes/user/UserDetail";
 import { RecoilRoot } from "recoil";
+import Studio from "./routes/studio/Studio";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -20,6 +21,7 @@ root.render(
           <Route path="/join" element={<Join />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/users/:id" element={<UserDetail />}></Route>
+          <Route path="/studio/*" element={<Studio />}></Route>
         </Routes>
       </Router>
     </RecoilRoot>
