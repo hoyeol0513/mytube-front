@@ -1,9 +1,12 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { userState } from "../recoil";
 //useNavigate를 이용해서 link 컴포넌트를 대체할 수 있음 (props 도 넘길 수 있음.)
 const Header = () => {
   const navigate = useNavigate();
-  const isLogined = false;
+  // const isLogined = false;
+  const [user, setUser] = useRecoilState(userState); //set함수를 안쓰려면 useRecoilValue만
   return (
     <header>
       <div className="navbar flex justify-between bg-base-100 border-b shadow-md">
@@ -44,7 +47,7 @@ const Header = () => {
 
         {/* 오른쪽 부분 : 사용자 프로필 avartar & dropdown & Login/out */}
         <div>
-          {isLogined ? (
+          {user ? (
             <div className="dropdown dropdown-end">
               <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
@@ -64,6 +67,7 @@ const Header = () => {
                 <li>
                   <div
                     onClick={() => {
+                      setUser(null);
                       navigate("/");
                     }}
                   >

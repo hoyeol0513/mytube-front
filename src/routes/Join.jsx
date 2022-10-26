@@ -1,11 +1,13 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { BACKEND_URL } from "../utils";
 
 const Join = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const navigate = useNavigate();
   return (
     <div>
       <form
@@ -25,6 +27,7 @@ const Join = () => {
             setUsername("");
             setEmail("");
             setPassword("");
+            navigate("/");
             alert("회원가입 성공");
             console.log(data);
           } catch (err) {

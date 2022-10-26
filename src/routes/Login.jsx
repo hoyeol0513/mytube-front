@@ -1,10 +1,15 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useRecoilState } from "recoil";
+import { userState } from "../recoil";
 import { BACKEND_URL } from "../utils";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const navigate = useNavigate();
+  const [user, setUser] = useRecoilState(userState);
   return (
     <div>
       <form
@@ -22,7 +27,9 @@ const Login = () => {
             });
             setEmail("");
             setPassword("");
+            setUser(data.data);
             alert("로그인 성공");
+            navigate("/");
             console.log(data);
           } catch (err) {
             console.log(err);
